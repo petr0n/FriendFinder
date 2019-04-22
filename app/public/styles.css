@@ -1,10 +1,32 @@
-/* styles.css */
+
 
 body {
     font-size: 16px;
 }
-header {
 
+header {
+    margin-bottom: 20px;
+}
+header .container {
+    background-image: url('images/header.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 0;
+    height: 300px;
+    border-bottom-left-radius: 20px;
+}
+header h1 {
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .3);
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    line-height: 2;
+    text-align: right;
+    margin: 0;
+    padding-right: 10px;
+    position: absolute;
+    width: 100%;
 }
 
 /* form */
