@@ -20,7 +20,11 @@
 
     <div class="wrapper">
         <div class="container">
-
+            <nav>
+                <a href="/" class="btn">Home</a>
+                <a href="/survey" class="btn">Take the survey</a>
+                <a href="/api/allFriends" class="btn">View All (JSON)</a>
+            </nav>
             <form action="" id="survey" class="needs-validation" novalidate>
                 <div class="form-group row">
                     <label for="fullName" class="col-sm-3 col-form-label">Name (Required)</label>
@@ -49,7 +53,7 @@
                         and plans.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q1" name="q1" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -68,7 +72,7 @@
                         than your imagination.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q2" name="q2" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -87,7 +91,7 @@
                         when there is some pressure.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q3" name="q3" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -105,7 +109,7 @@
                         curiosity.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q4" name="q4" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -123,7 +127,7 @@
                     <label for="q5" class="col-sm-9 col-form-label">People can rarely upset you.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q5" name="q5" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -142,7 +146,7 @@
                         people’s feelings.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q6" name="q6" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -161,7 +165,7 @@
                         people’s sensitivities.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q7" name="q7" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -179,7 +183,7 @@
                         ideas.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q8" name="q8" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -198,7 +202,7 @@
                         should be respected regardless of whether they are supported by facts or not.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q9" name="q9" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -218,7 +222,7 @@
                         group of people.</label>
                     <div class="col-sm-3">
                         <select class="custom-select custom-select-lg mb-3" id="q10" name="q10" required>
-                            <option value=""></option>
+                            <option value="">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -274,7 +278,7 @@
                     `;
                     modalEl.find('.modal-body').html(content);
                     modalEl.modal();
-                    console.log('data', JSON.parse(data));
+                    // console.log('data', JSON.parse(data));
                 });
         }
 

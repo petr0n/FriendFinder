@@ -19,13 +19,37 @@
     <div class="wrapper">
         <div class="container">
             <h3>Welcome to the FriendFinder by PA</h3>
-            
+            <nav>
+                <a href="/" class="btn">Home</a>
+                <a href="/survey" class="btn">Take the survey</a>
+                <a href="/api/allFriends" class="btn">View All (JSON)</a>
+            </nav>
+            <hr>
+            <div class="friends-wrapper">
+            </div>
         </div>
     </div>
 
 
-    <script></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $.get('/api/allFriends', function( data ) {
+            // console.log(data[0].photo);
+            let friendEls = '';
+            for (let x = 0; x < data.length; x++){
+                friendEls += `
+                    <div class="card">
+                        <img src="${data[x].photo}" class="card-img-top" alt="${data[x].name}">
+                        <div class="card-body">
+                            <p class="card-text">${data[x].name}</p>
+                        </div>
+                    </div>
+                `;
+
+            }
+            $('.friends-wrapper').append(friendEls);
+        });
+    </script>
 </body>
 </html>

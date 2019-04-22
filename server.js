@@ -27,7 +27,6 @@ app.get('/survey', function (req, res) {
 
 // API ROUTES
 app.post('/api/saveSurvey', function (req, res) {
-    // console.log('req', req.body);
     if (req.body) {
         let bestMatch = addFriend(req.body);
         console.log(bestMatch);
@@ -36,8 +35,8 @@ app.post('/api/saveSurvey', function (req, res) {
     // return 'hello';
 });
 
-app.post('/api/friends', function (req, res) {
-   
+app.get('/api/allFriends', function (req, res) {
+   return res.json(getFriendsJSON());
 });
 
 
@@ -64,7 +63,7 @@ function addFriend(friendFormObj){
         "photo": friendFormObj.photo,
         "scores": scoresArr
     }
-    // saveFriend(friendObj);
+    saveFriend(friendObj);
     return closestMatch(friendObj);
 
 }
@@ -72,12 +71,7 @@ function addFriend(friendFormObj){
 function saveFriend(friendObj) {
     let friendArr = getFriendsJSON();
     friendArr.push(friendObj);
-    // console.log(friendArr);
     fs.writeFileSync(__dirname + '/app/data/friends.js', JSON.stringify(friendArr));
-    // , function(err){
-    //     if (err) throw err;
-    //     console.log('Saved!');
-    // });
 }
 
 function closestMatch(currentFriend){
@@ -92,7 +86,6 @@ function closestMatch(currentFriend){
         }
         return newDiffArr;
     });
-    // console.log('diffScores', diffScores);
 
     // reduce score diffs to sum for each friend
     let diffScoreArr = diffScores.map((friendScore, i)  => {
@@ -105,24 +98,5 @@ function closestMatch(currentFriend){
         return prev.score < curr.score ? prev : curr;
     });
 
-    // console.log('lowest', lowest);
-    // console.log(friendArr[lowest.id]);
     return JSON.stringify(friendArr[lowest.id]);
 }
-/*
-
-
-Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
-With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the totalDifference.
-
-Example:
-
-User 1: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-
-User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
-
-Total Difference: 2 + 1 + 2 = 5
-
-Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both 5-3 and 3-5 as 2, and so on.
-The closest match will be the user with the least amount of difference.
-*/

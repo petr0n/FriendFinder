@@ -35,3 +35,13 @@ header h1 {
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
+
+.friends-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+}
+.card {
+    width: 23%;
+    margin-bottom: 30px;
+}
