@@ -42,7 +42,6 @@ function addFriend(friendFormObj){
     }
     saveFriend(friendObj);
     return closestMatch(friendObj);
-
 }
 
 function saveFriend(friendObj) {
@@ -52,7 +51,7 @@ function saveFriend(friendObj) {
 }
 
 function closestMatch(currentFriend){
-    //get friends lst
+    // get friends list
     let friendArr = getFriendsJSON();
     
     // get diffs between current friend and friends list
@@ -68,7 +67,6 @@ function closestMatch(currentFriend){
     let diffScoreArr = diffScores.map((friendScore, i)  => {
         return {"score": friendScore.reduce((t,n) => t + n), "id" : i};
     });
-    // console.log('diffScoreArr', diffScoreArr);
 
     diffScoreArr.pop();  // remove last item which is the current friend(yourself)
     let lowest = diffScoreArr.reduce((prev, curr) =>  {
