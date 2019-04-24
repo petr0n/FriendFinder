@@ -12,33 +12,10 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/app/public'));
 
 
-
 // Routes
 // =============================================================
-// HTML ROUTES
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, './app/public/home.html'));
-});
-
-app.get('/survey', function (req, res) {
-    res.sendFile(path.join(__dirname, './app/public/survey.html'));
-});
-
-
-// API ROUTES
-app.post('/api/saveSurvey', function (req, res) {
-    if (req.body) {
-        let bestMatch = addFriend(req.body);
-        console.log(bestMatch);
-        return res.json(bestMatch);
-    }
-    // return 'hello';
-});
-
-app.get('/api/allFriends', function (req, res) {
-   return res.json(getFriendsJSON());
-});
-
+require('./app/routing/htmlRoutes')(app);
+require('./app/routing/apiRoutes')(app);
 
 
 // Starts the server to begin listening
