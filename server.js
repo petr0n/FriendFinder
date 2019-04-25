@@ -1,7 +1,6 @@
 // server.js
 
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
@@ -15,7 +14,7 @@ app.use(express.static(__dirname + '/app/public'));
 // Routes
 // =============================================================
 require('./app/routing/htmlRoutes')(app);
-require('./app/routing/apiRoutes')(app);
+require('./app/routing/apiRoutes')(app,getFriendsJSON);
 
 
 // Starts the server to begin listening
