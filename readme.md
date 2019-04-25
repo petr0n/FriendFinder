@@ -1,6 +1,6 @@
 # FriendFinder by PA
 
-This is a simple friend finder app build with Node and Handlebars. Fill out our hightly scientific survey and this app will match you with your "perfect" match!
+This is a simple friend finder app build with Node and Express. Fill out our hightly scientific survey and this app will match you with your "perfect" match!
 
 ## Home 
 Shows all the friends. This is pulled in from a local file in the form of a JSON object and uses a for loop to create elements for each tile.
