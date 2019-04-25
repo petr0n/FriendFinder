@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/app/public'));
 // Routes
 // =============================================================
 require('./app/routing/htmlRoutes')(app);
-require('./app/routing/apiRoutes')(app,getFriendsJSON);
+require('./app/routing/apiRoutes')(app,getFriendsJSON,addFriend);
 
 
 // Starts the server to begin listening

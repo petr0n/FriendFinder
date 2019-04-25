@@ -1,4 +1,4 @@
-module.exports = function(app,getFriendsJSON) {
+module.exports = function(app,getFriendsJSON,addFriend) {
     // API ROUTES
     app.post('/api/saveSurvey', function (req, res) {
         if (req.body) {
